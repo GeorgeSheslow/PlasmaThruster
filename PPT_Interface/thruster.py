@@ -9,7 +9,7 @@ class ThrusterInterface:
             bytesize=8,
             parity=serial.PARITY_NONE,
             stopbits=serial.STOPBITS_ONE,
-            timeout=0.05,
+            timeout=0.1,
         )
         self.ping_msg = b"\x80"
         self.fire_msg = b"\x81"
