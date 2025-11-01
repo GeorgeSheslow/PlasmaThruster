@@ -1,0 +1,11 @@
+out.voltage.Data(1:100) = ones(1,100) * -100;
+figure(1)
+sgtitle("Small Capacitor with Thruster Simulation")
+subplot(2,1,1)
+plot(out.voltage, 'LineWidth', 2)
+title("Voltage Plot")
+ylabel("Voltage (V)")
+subplot(2,1,2)
+plot(out.current, 'LineWidth', 2)
+title("Current Plot")
+ylabel("Current (A)")

@@ -1,0 +1,20 @@
+
+figure(1)
+sgtitle("Optimized Power System Simulation")
+subplot(3,1,1)
+plot(out.tout*1e6,out.Vcap.Data)
+legend("Capacitor Voltage (V)")
+xlabel("Time (us)")
+ylabel("Voltage (V)")
+
+subplot(3,1,2)
+plot(out.tout*1e6,out.voltage.Data)
+legend("Cathode Voltage (V)")
+xlabel("Time (us)")
+ylabel("Voltage (V)")
+
+subplot(3,1,3)
+plot(out.tout*1e6,out.current.Data)
+legend("Cathode Current")
+xlabel("Time (us)")
+ylabel("Current (A)")
