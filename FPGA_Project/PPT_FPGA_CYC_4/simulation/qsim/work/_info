@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\gshes\OneDrive\Desktop\PPT_FPGA_CYC_4\simulation\qsim
+vPPT_FPGA_CYC_4
+Z1 IgXZRK=WW89AH^0]UV<MQ=1
+Z2 V5[>AE<[9ZZd>o]APlUU1D2
+Z3 dC:\Users\gshes\OneDrive\Desktop\PPT_FPGA_CYC_4\simulation\qsim
+Z4 w1757205545
+Z5 8PPT_FPGA_CYC_4.vo
+Z6 FPPT_FPGA_CYC_4.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|PPT_FPGA_CYC_4.vo|
+Z9 o-work work -O0
+Z10 n@p@p@t_@f@p@g@a_@c@y@c_4
+!i10b 1
+Z11 !s100 _;^[jOJYk[P<H=ASShLH:3
+!s85 0
+Z12 !s108 1757205546.135000
+Z13 !s107 PPT_FPGA_CYC_4.vo|
+!s101 -O0
+vPPT_FPGA_CYC_4_vlg_check_tst
+!i10b 1
+Z14 !s100 :4N3?ZIklh_KWMXYQ]ZbB1
+Z15 I>3OnmcYjXoz?<@@39Z;Wf2
+Z16 V_e>fe6LU8][ch:7dS:BPb0
+R3
+R4
+Z17 8PPT_FPGA_CYC_4.vt
+Z18 FPPT_FPGA_CYC_4.vt
+L0 59
+R7
+r1
+!s85 0
+31
+Z19 !s108 1757205546.230000
+Z20 !s107 PPT_FPGA_CYC_4.vt|
+Z21 !s90 -work|work|PPT_FPGA_CYC_4.vt|
+!s101 -O0
+R9
+Z22 n@p@p@t_@f@p@g@a_@c@y@c_4_vlg_check_tst
+vPPT_FPGA_CYC_4_vlg_sample_tst
+!i10b 1
+Z23 !s100 ofWfKUZ68=9Xofn=E49cS3
+Z24 IGgQYjLO?NTZCjJX>ZP^^10
+Z25 Vz`jT[J88YOi]EW3;GdR[G0
+R3
+R4
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+Z26 n@p@p@t_@f@p@g@a_@c@y@c_4_vlg_sample_tst
+vPPT_FPGA_CYC_4_vlg_vec_tst
+!i10b 1
+Z27 !s100 zdCV9cml[1_Ogz0XRH>eL3
+Z28 IC9hlSjD5=RZ`hhXaT6:Mk0
+Z29 VXXU]o=R:Shc<Tfhiz=z9j1
+R3
+R4
+R17
+R18
+Z30 L0 181
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+Z31 n@p@p@t_@f@p@g@a_@c@y@c_4_vlg_vec_tst

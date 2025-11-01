@@ -1,0 +1,23 @@
+module counter_trigger_100ns (
+    input wire clk,         // 50 MHz clock
+    input wire rst,         // Synchronous reset
+    output reg trigger      // Output pulse every 100 ns
+);
+
+    // 3-bit counter (enough to count to 5)
+    reg [2:0] count;
+
+    always @(posedge clk) begin
+        if (rst) begin
+            count   <= 3'd0;
+            trigger <= 1'b0;
+        end else begin
+            if (count == 3'd4) begin  // After 5 clock cycles (0 to 4)
+                count   <= 3'd0;
+                trigger <= 1'b1;      // Pulse HIGH for 1 clock cycle
+            end else begin
+                count   <= count + 3'd1;
+                trigger <= 1'b0;
+            end
+        end
+    end

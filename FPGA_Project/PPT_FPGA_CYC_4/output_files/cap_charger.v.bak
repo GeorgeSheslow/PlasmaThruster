@@ -1,0 +1,16 @@
+module CapacitorCharger (
+    input wire clk,
+	 input wire enable,
+    input wire done,
+	 input wire fault,
+	 output reg on,
+	 output reg finished
+);
+
+reg enable_latch = 0;
+
+always @(posedge clk) begin
+	
+end
+
+endmodule

@@ -1,0 +1,6 @@
+
+State Machine - |PPT_FPGA_CYC_4|spi_module:inst17|r_SM_CS
+Name r_SM_CS.IDLE r_SM_CS.CS_INACTIVE r_SM_CS.TRANSFER 
+r_SM_CS.IDLE 0 0 0 
+r_SM_CS.TRANSFER 1 0 1 
+r_SM_CS.CS_INACTIVE 1 1 0 

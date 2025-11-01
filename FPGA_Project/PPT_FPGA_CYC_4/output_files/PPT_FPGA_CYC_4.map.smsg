@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at serial_GPIO.v(40): always construct contains both blocking and non-blocking assignments

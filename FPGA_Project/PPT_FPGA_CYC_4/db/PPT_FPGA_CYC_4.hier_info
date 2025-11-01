@@ -1,0 +1,487 @@
+|PPT_FPGA_CYC_4
+spark_trig <= igbt_trigger:inst26.trigger
+CLK => igbt_trigger:inst26.clk
+CLK => FireController:inst30.clk
+CLK => serialGPIO:inst4.clk
+CLK => CapacitorCharger:inst27.clk
+CLK => PushButton_Debouncer:inst10.clk
+CLK => PushButton_Debouncer:inst11.clk
+CLK => CapacitorCharger:inst29.clk
+CLK => PushButton_Debouncer:inst8.clk
+CLK => PushButton_Debouncer:inst9.clk
+CLK => PushButton_Debouncer:inst5.clk
+CLK => PushButton_Debouncer:inst6.clk
+CLK => spi_module:inst17.i_Clk
+rx_pin => serialGPIO:inst4.RxD
+trig_done_pin => PushButton_Debouncer:inst10.PB
+trig_fault_pin => PushButton_Debouncer:inst11.PB
+cap_done_pin => PushButton_Debouncer:inst8.PB
+cap_fault_pin => PushButton_Debouncer:inst9.PB
+cap_12V <= <VCC>
+cap_on_pin <= CapacitorCharger:inst29.on
+trig_on_pin <= CapacitorCharger:inst27.on
+trig_12V <= <VCC>
+spark_pwr <= <VCC>
+D2_LED <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+D4_LED <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+D5_LED <= inst22.DB_MAX_OUTPUT_PORT_TYPE
+LED1 <= PushButton_Debouncer:inst5.PB_state
+B2 => inst.IN0
+LED2 <= PushButton_Debouncer:inst6.PB_state
+B1 => inst1.IN0
+switching_pin <= igbt_trigger:inst26.trigger
+tx_pin <= serialGPIO:inst4.TxD
+spi_sdi <= spi_module:inst17.o_SPI_MOSI
+spi_clk <= spi_module:inst17.o_SPI_Clk
+spi_cs_1 <= spi_module:inst17.CS_1
+spi_cs_2 <= spi_module:inst17.CS_2
+
+
+|PPT_FPGA_CYC_4|igbt_trigger:inst26
+clk => trigger~reg0.CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => counter[7].CLK
+clk => counter[8].CLK
+clk => counter[9].CLK
+clk => counter[10].CLK
+clk => counter[11].CLK
+clk => counter[12].CLK
+clk => counter[13].CLK
+clk => counter[14].CLK
+clk => counter[15].CLK
+clk => done~reg0.CLK
+clk => triggering.CLK
+enable => always0.IN1
+enable => always0.IN1
+trigger <= trigger~reg0.DB_MAX_OUTPUT_PORT_TYPE
+done <= done~reg0.DB_MAX_OUTPUT_PORT_TYPE
+duration[0] => Mult0.IN13
+duration[1] => Mult0.IN12
+duration[2] => Mult0.IN11
+duration[3] => Mult0.IN10
+duration[4] => Mult0.IN9
+duration[5] => Mult0.IN8
+duration[6] => Mult0.IN7
+duration[7] => Mult0.IN6
+
+
+|PPT_FPGA_CYC_4|FireController:inst30
+clk => trigger~reg0.CLK
+clk => charge_rst~reg0.CLK
+clk => trig_fire_latch.CLK
+clk => trig_charge~reg0.CLK
+trig_fire => always0.IN1
+trig_fire => trig_fire_latch.OUTPUTSELECT
+fire => ~NO_FANOUT~
+charge_rst <= charge_rst~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trig_charge <= trig_charge~reg0.DB_MAX_OUTPUT_PORT_TYPE
+main_cap_charge <= <GND>
+trig_finished => always0.IN1
+main_cap_finished => ~NO_FANOUT~
+trigger <= trigger~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PPT_FPGA_CYC_4|serialGPIO:inst4
+clk => clk.IN2
+RxD => RxD.IN1
+TxD <= async_transmitter:TX.TxD
+fire <= fire~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trigger_fire <= trigger_fire~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trigger_test <= trigger_test~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trig_charge <= trig_charge~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cap_charge <= cap_charge~reg0.DB_MAX_OUTPUT_PORT_TYPE
+charge_rst <= charge_rst~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trigger_duration_us[0] <= trigger_duration_us[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trigger_duration_us[1] <= trigger_duration_us[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trigger_duration_us[2] <= trigger_duration_us[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trigger_duration_us[3] <= trigger_duration_us[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trigger_duration_us[4] <= trigger_duration_us[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trigger_duration_us[5] <= trigger_duration_us[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trigger_duration_us[6] <= trigger_duration_us[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trigger_duration_us[7] <= trigger_duration_us[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+resistance[0] <= resistance[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+resistance[1] <= resistance[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+resistance[2] <= resistance[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+resistance[3] <= resistance[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+resistance[4] <= resistance[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+resistance[5] <= resistance[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+resistance[6] <= resistance[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+resistance[7] <= resistance[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+spi_write <= spi_write~reg0.DB_MAX_OUTPUT_PORT_TYPE
+select <= select~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PPT_FPGA_CYC_4|serialGPIO:inst4|async_receiver:RX
+clk => clk.IN1
+RxD => RxD_sync[0].DATAIN
+RxD_data_ready <= RxD_data_ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RxD_data[0] <= RxD_data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RxD_data[1] <= RxD_data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RxD_data[2] <= RxD_data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RxD_data[3] <= RxD_data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RxD_data[4] <= RxD_data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RxD_data[5] <= RxD_data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RxD_data[6] <= RxD_data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RxD_data[7] <= RxD_data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RxD_idle <= GapCnt[5].DB_MAX_OUTPUT_PORT_TYPE
+RxD_endofpacket <= RxD_endofpacket~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PPT_FPGA_CYC_4|serialGPIO:inst4|async_receiver:RX|BaudTickGen:tickgen
+clk => Acc[4].CLK
+clk => Acc[5].CLK
+clk => Acc[6].CLK
+clk => Acc[7].CLK
+clk => Acc[8].CLK
+clk => Acc[9].CLK
+clk => Acc[10].CLK
+clk => Acc[11].CLK
+clk => Acc[12].CLK
+clk => Acc[13].CLK
+clk => Acc[14].CLK
+clk => Acc[15].CLK
+clk => Acc[16].CLK
+clk => Acc[17].CLK
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+tick <= Acc[17].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PPT_FPGA_CYC_4|serialGPIO:inst4|async_transmitter:TX
+clk => clk.IN1
+TxD_start => always0.IN1
+TxD_start => TxD_state.OUTPUTSELECT
+TxD_start => TxD_state.OUTPUTSELECT
+TxD_start => TxD_state.OUTPUTSELECT
+TxD_start => TxD_state.OUTPUTSELECT
+TxD_data[0] => TxD_shift.DATAB
+TxD_data[1] => TxD_shift.DATAB
+TxD_data[2] => TxD_shift.DATAB
+TxD_data[3] => TxD_shift.DATAB
+TxD_data[4] => TxD_shift.DATAB
+TxD_data[5] => TxD_shift.DATAB
+TxD_data[6] => TxD_shift.DATAB
+TxD_data[7] => TxD_shift.DATAB
+TxD <= TxD.DB_MAX_OUTPUT_PORT_TYPE
+TxD_busy <= TxD_busy.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PPT_FPGA_CYC_4|serialGPIO:inst4|async_transmitter:TX|BaudTickGen:tickgen
+clk => Acc[1].CLK
+clk => Acc[2].CLK
+clk => Acc[3].CLK
+clk => Acc[4].CLK
+clk => Acc[5].CLK
+clk => Acc[6].CLK
+clk => Acc[7].CLK
+clk => Acc[8].CLK
+clk => Acc[9].CLK
+clk => Acc[10].CLK
+clk => Acc[11].CLK
+clk => Acc[12].CLK
+clk => Acc[13].CLK
+clk => Acc[14].CLK
+clk => Acc[15].CLK
+clk => Acc[16].CLK
+clk => Acc[17].CLK
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+enable => Acc.OUTPUTSELECT
+tick <= Acc[17].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PPT_FPGA_CYC_4|CapacitorCharger:inst27
+clk => fault_latch.CLK
+clk => done_latch.CLK
+clk => enable_latch.CLK
+rst => enable_latch.OUTPUTSELECT
+rst => done_latch.OUTPUTSELECT
+rst => fault_latch.OUTPUTSELECT
+enable => enable_latch.OUTPUTSELECT
+done => done_latch.OUTPUTSELECT
+fault => fault_latch.OUTPUTSELECT
+on <= on.DB_MAX_OUTPUT_PORT_TYPE
+finished <= finished.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PPT_FPGA_CYC_4|PushButton_Debouncer:inst10
+PB => PB_sync_0.DATAIN
+clk => PB_state~reg0.CLK
+clk => PB_cnt[0].CLK
+clk => PB_cnt[1].CLK
+clk => PB_cnt[2].CLK
+clk => PB_cnt[3].CLK
+clk => PB_cnt[4].CLK
+clk => PB_cnt[5].CLK
+clk => PB_cnt[6].CLK
+clk => PB_cnt[7].CLK
+clk => PB_cnt[8].CLK
+clk => PB_cnt[9].CLK
+clk => PB_cnt[10].CLK
+clk => PB_cnt[11].CLK
+clk => PB_cnt[12].CLK
+clk => PB_cnt[13].CLK
+clk => PB_cnt[14].CLK
+clk => PB_cnt[15].CLK
+clk => PB_sync_1.CLK
+clk => PB_sync_0.CLK
+PB_state <= PB_state~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PPT_FPGA_CYC_4|PushButton_Debouncer:inst11
+PB => PB_sync_0.DATAIN
+clk => PB_state~reg0.CLK
+clk => PB_cnt[0].CLK
+clk => PB_cnt[1].CLK
+clk => PB_cnt[2].CLK
+clk => PB_cnt[3].CLK
+clk => PB_cnt[4].CLK
+clk => PB_cnt[5].CLK
+clk => PB_cnt[6].CLK
+clk => PB_cnt[7].CLK
+clk => PB_cnt[8].CLK
+clk => PB_cnt[9].CLK
+clk => PB_cnt[10].CLK
+clk => PB_cnt[11].CLK
+clk => PB_cnt[12].CLK
+clk => PB_cnt[13].CLK
+clk => PB_cnt[14].CLK
+clk => PB_cnt[15].CLK
+clk => PB_sync_1.CLK
+clk => PB_sync_0.CLK
+PB_state <= PB_state~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PPT_FPGA_CYC_4|CapacitorCharger:inst29
+clk => fault_latch.CLK
+clk => done_latch.CLK
+clk => enable_latch.CLK
+rst => enable_latch.OUTPUTSELECT
+rst => done_latch.OUTPUTSELECT
+rst => fault_latch.OUTPUTSELECT
+enable => enable_latch.OUTPUTSELECT
+done => done_latch.OUTPUTSELECT
+fault => fault_latch.OUTPUTSELECT
+on <= on.DB_MAX_OUTPUT_PORT_TYPE
+finished <= finished.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PPT_FPGA_CYC_4|PushButton_Debouncer:inst8
+PB => PB_sync_0.DATAIN
+clk => PB_state~reg0.CLK
+clk => PB_cnt[0].CLK
+clk => PB_cnt[1].CLK
+clk => PB_cnt[2].CLK
+clk => PB_cnt[3].CLK
+clk => PB_cnt[4].CLK
+clk => PB_cnt[5].CLK
+clk => PB_cnt[6].CLK
+clk => PB_cnt[7].CLK
+clk => PB_cnt[8].CLK
+clk => PB_cnt[9].CLK
+clk => PB_cnt[10].CLK
+clk => PB_cnt[11].CLK
+clk => PB_cnt[12].CLK
+clk => PB_cnt[13].CLK
+clk => PB_cnt[14].CLK
+clk => PB_cnt[15].CLK
+clk => PB_sync_1.CLK
+clk => PB_sync_0.CLK
+PB_state <= PB_state~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PPT_FPGA_CYC_4|PushButton_Debouncer:inst9
+PB => PB_sync_0.DATAIN
+clk => PB_state~reg0.CLK
+clk => PB_cnt[0].CLK
+clk => PB_cnt[1].CLK
+clk => PB_cnt[2].CLK
+clk => PB_cnt[3].CLK
+clk => PB_cnt[4].CLK
+clk => PB_cnt[5].CLK
+clk => PB_cnt[6].CLK
+clk => PB_cnt[7].CLK
+clk => PB_cnt[8].CLK
+clk => PB_cnt[9].CLK
+clk => PB_cnt[10].CLK
+clk => PB_cnt[11].CLK
+clk => PB_cnt[12].CLK
+clk => PB_cnt[13].CLK
+clk => PB_cnt[14].CLK
+clk => PB_cnt[15].CLK
+clk => PB_sync_1.CLK
+clk => PB_sync_0.CLK
+PB_state <= PB_state~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PPT_FPGA_CYC_4|PushButton_Debouncer:inst5
+PB => PB_sync_0.DATAIN
+clk => PB_state~reg0.CLK
+clk => PB_cnt[0].CLK
+clk => PB_cnt[1].CLK
+clk => PB_cnt[2].CLK
+clk => PB_cnt[3].CLK
+clk => PB_cnt[4].CLK
+clk => PB_cnt[5].CLK
+clk => PB_cnt[6].CLK
+clk => PB_cnt[7].CLK
+clk => PB_cnt[8].CLK
+clk => PB_cnt[9].CLK
+clk => PB_cnt[10].CLK
+clk => PB_cnt[11].CLK
+clk => PB_cnt[12].CLK
+clk => PB_cnt[13].CLK
+clk => PB_cnt[14].CLK
+clk => PB_cnt[15].CLK
+clk => PB_sync_1.CLK
+clk => PB_sync_0.CLK
+PB_state <= PB_state~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PPT_FPGA_CYC_4|PushButton_Debouncer:inst6
+PB => PB_sync_0.DATAIN
+clk => PB_state~reg0.CLK
+clk => PB_cnt[0].CLK
+clk => PB_cnt[1].CLK
+clk => PB_cnt[2].CLK
+clk => PB_cnt[3].CLK
+clk => PB_cnt[4].CLK
+clk => PB_cnt[5].CLK
+clk => PB_cnt[6].CLK
+clk => PB_cnt[7].CLK
+clk => PB_cnt[8].CLK
+clk => PB_cnt[9].CLK
+clk => PB_cnt[10].CLK
+clk => PB_cnt[11].CLK
+clk => PB_cnt[12].CLK
+clk => PB_cnt[13].CLK
+clk => PB_cnt[14].CLK
+clk => PB_cnt[15].CLK
+clk => PB_sync_1.CLK
+clk => PB_sync_0.CLK
+PB_state <= PB_state~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PPT_FPGA_CYC_4|spi_module:inst17
+i_Rst_L => cs_enable.ACLR
+i_Rst_L => r_SPI_Clk_Count[0].ACLR
+i_Rst_L => r_SPI_Clk_Count[1].ACLR
+i_Rst_L => r_SPI_Clk_Count[2].ACLR
+i_Rst_L => r_SPI_Clk.ALOAD
+i_Rst_L => r_Trailing_Edge.ACLR
+i_Rst_L => r_SPI_Clk_Edges[0].ACLR
+i_Rst_L => r_SPI_Clk_Edges[1].ACLR
+i_Rst_L => r_SPI_Clk_Edges[2].ACLR
+i_Rst_L => r_SPI_Clk_Edges[3].ACLR
+i_Rst_L => r_SPI_Clk_Edges[4].ACLR
+i_Rst_L => o_TX_Ready~reg0.ACLR
+i_Rst_L => o_SPI_Clk~reg0.ALOAD
+i_Rst_L => r_TX_Bit_Count[0].PRESET
+i_Rst_L => r_TX_Bit_Count[1].PRESET
+i_Rst_L => r_TX_Bit_Count[2].PRESET
+i_Rst_L => o_SPI_MOSI~reg0.ACLR
+i_Rst_L => r_TX_DV.ACLR
+i_Rst_L => r_TX_Byte[0].ACLR
+i_Rst_L => r_TX_Byte[1].ACLR
+i_Rst_L => r_TX_Byte[2].ACLR
+i_Rst_L => r_TX_Byte[3].ACLR
+i_Rst_L => r_TX_Byte[4].ACLR
+i_Rst_L => r_TX_Byte[5].ACLR
+i_Rst_L => r_TX_Byte[6].ACLR
+i_Rst_L => r_TX_Byte[7].ACLR
+i_Clk => o_SPI_Clk~reg0.CLK
+i_Clk => r_TX_Bit_Count[0].CLK
+i_Clk => r_TX_Bit_Count[1].CLK
+i_Clk => r_TX_Bit_Count[2].CLK
+i_Clk => o_SPI_MOSI~reg0.CLK
+i_Clk => r_TX_DV.CLK
+i_Clk => r_TX_Byte[0].CLK
+i_Clk => r_TX_Byte[1].CLK
+i_Clk => r_TX_Byte[2].CLK
+i_Clk => r_TX_Byte[3].CLK
+i_Clk => r_TX_Byte[4].CLK
+i_Clk => r_TX_Byte[5].CLK
+i_Clk => r_TX_Byte[6].CLK
+i_Clk => r_TX_Byte[7].CLK
+i_Clk => cs_enable.CLK
+i_Clk => r_SPI_Clk_Count[0].CLK
+i_Clk => r_SPI_Clk_Count[1].CLK
+i_Clk => r_SPI_Clk_Count[2].CLK
+i_Clk => r_SPI_Clk.CLK
+i_Clk => r_Trailing_Edge.CLK
+i_Clk => r_SPI_Clk_Edges[0].CLK
+i_Clk => r_SPI_Clk_Edges[1].CLK
+i_Clk => r_SPI_Clk_Edges[2].CLK
+i_Clk => r_SPI_Clk_Edges[3].CLK
+i_Clk => r_SPI_Clk_Edges[4].CLK
+i_Clk => o_TX_Ready~reg0.CLK
+i_TX_Byte[0] => r_TX_Byte[0].DATAIN
+i_TX_Byte[1] => r_TX_Byte[1].DATAIN
+i_TX_Byte[2] => r_TX_Byte[2].DATAIN
+i_TX_Byte[3] => r_TX_Byte[3].DATAIN
+i_TX_Byte[4] => r_TX_Byte[4].DATAIN
+i_TX_Byte[5] => r_TX_Byte[5].DATAIN
+i_TX_Byte[6] => r_TX_Byte[6].DATAIN
+i_TX_Byte[7] => r_TX_Byte[7].DATAIN
+i_TX_DV => cs_enable.OUTPUTSELECT
+i_TX_DV => o_TX_Ready.OUTPUTSELECT
+i_TX_DV => r_SPI_Clk_Edges.OUTPUTSELECT
+i_TX_DV => r_SPI_Clk_Edges.OUTPUTSELECT
+i_TX_DV => r_SPI_Clk_Edges.OUTPUTSELECT
+i_TX_DV => r_SPI_Clk_Edges.OUTPUTSELECT
+i_TX_DV => r_SPI_Clk_Edges.OUTPUTSELECT
+i_TX_DV => r_Trailing_Edge.OUTPUTSELECT
+i_TX_DV => r_TX_DV.DATAIN
+i_TX_DV => r_SPI_Clk.ENA
+i_TX_DV => r_SPI_Clk_Count[2].ENA
+i_TX_DV => r_SPI_Clk_Count[1].ENA
+i_TX_DV => r_SPI_Clk_Count[0].ENA
+i_TX_DV => r_TX_Byte[7].ENA
+i_TX_DV => r_TX_Byte[6].ENA
+i_TX_DV => r_TX_Byte[5].ENA
+i_TX_DV => r_TX_Byte[4].ENA
+i_TX_DV => r_TX_Byte[3].ENA
+i_TX_DV => r_TX_Byte[2].ENA
+i_TX_DV => r_TX_Byte[1].ENA
+i_TX_DV => r_TX_Byte[0].ENA
+o_TX_Ready <= o_TX_Ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
+o_SPI_Clk <= o_SPI_Clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+o_SPI_MOSI <= o_SPI_MOSI~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CS_1 <= CS_1.DB_MAX_OUTPUT_PORT_TYPE
+CS_2 <= CS_2.DB_MAX_OUTPUT_PORT_TYPE
+select => CS_2.IN1
+select => CS_1.IN1
+
+

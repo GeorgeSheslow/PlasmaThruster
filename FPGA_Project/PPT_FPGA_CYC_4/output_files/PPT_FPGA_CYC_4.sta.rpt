@@ -1,0 +1,1161 @@
+TimeQuest Timing Analyzer report for PPT_FPGA_CYC_4
+Fri Oct 10 14:49:49 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'CLK'
+ 12. Slow Model Hold: 'CLK'
+ 13. Slow Model Minimum Pulse Width: 'CLK'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'CLK'
+ 24. Fast Model Hold: 'CLK'
+ 25. Fast Model Minimum Pulse Width: 'CLK'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; PPT_FPGA_CYC_4                                                    ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C5T144C8                                                       ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; CLK        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 125.8 MHz ; 125.8 MHz       ; CLK        ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; CLK   ; -6.949 ; -694.934      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; CLK   ; 0.499 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; CLK   ; -1.941 ; -433.785              ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLK'                                                                                                                                  ;
++--------+-----------------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; -6.949 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[2]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.978      ;
+; -6.949 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[3]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.978      ;
+; -6.949 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[4]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.978      ;
+; -6.949 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[5]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.978      ;
+; -6.949 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[6]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.978      ;
+; -6.949 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[7]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.978      ;
+; -6.949 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[8]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.978      ;
+; -6.949 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[9]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.978      ;
+; -6.949 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[10] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.978      ;
+; -6.949 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[11] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.978      ;
+; -6.949 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[12] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.978      ;
+; -6.949 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[13] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.978      ;
+; -6.949 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[0]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.978      ;
+; -6.697 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[1]  ; CLK          ; CLK         ; 1.000        ; -0.013     ; 7.724      ;
+; -6.585 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[2]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.614      ;
+; -6.585 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[3]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.614      ;
+; -6.585 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[4]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.614      ;
+; -6.585 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[5]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.614      ;
+; -6.585 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[6]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.614      ;
+; -6.585 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[7]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.614      ;
+; -6.585 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[8]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.614      ;
+; -6.585 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[9]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.614      ;
+; -6.585 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[10] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.614      ;
+; -6.585 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[11] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.614      ;
+; -6.585 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[12] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.614      ;
+; -6.585 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[13] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.614      ;
+; -6.585 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[0]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.614      ;
+; -6.508 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[2]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.537      ;
+; -6.508 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[3]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.537      ;
+; -6.508 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[4]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.537      ;
+; -6.508 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[5]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.537      ;
+; -6.508 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[6]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.537      ;
+; -6.508 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[7]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.537      ;
+; -6.508 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[8]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.537      ;
+; -6.508 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[9]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.537      ;
+; -6.508 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[10] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.537      ;
+; -6.508 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[11] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.537      ;
+; -6.508 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[12] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.537      ;
+; -6.508 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[13] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.537      ;
+; -6.508 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[0]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.537      ;
+; -6.499 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[2]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.528      ;
+; -6.499 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[3]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.528      ;
+; -6.499 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[4]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.528      ;
+; -6.499 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[5]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.528      ;
+; -6.499 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[6]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.528      ;
+; -6.499 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[7]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.528      ;
+; -6.499 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[8]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.528      ;
+; -6.499 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[9]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.528      ;
+; -6.499 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[10] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.528      ;
+; -6.499 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[11] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.528      ;
+; -6.499 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[12] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.528      ;
+; -6.499 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[13] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.528      ;
+; -6.499 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[0]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.528      ;
+; -6.411 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[2]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.440      ;
+; -6.411 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[3]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.440      ;
+; -6.411 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[4]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.440      ;
+; -6.411 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[5]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.440      ;
+; -6.411 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[6]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.440      ;
+; -6.411 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[7]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.440      ;
+; -6.411 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[8]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.440      ;
+; -6.411 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[9]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.440      ;
+; -6.411 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[10] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.440      ;
+; -6.411 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[11] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.440      ;
+; -6.411 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[12] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.440      ;
+; -6.411 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[13] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.440      ;
+; -6.411 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[0]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.440      ;
+; -6.333 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[1]  ; CLK          ; CLK         ; 1.000        ; -0.013     ; 7.360      ;
+; -6.286 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[14] ; CLK          ; CLK         ; 1.000        ; -0.004     ; 7.322      ;
+; -6.264 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[2]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.293      ;
+; -6.264 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[3]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.293      ;
+; -6.264 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[4]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.293      ;
+; -6.264 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[5]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.293      ;
+; -6.264 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[6]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.293      ;
+; -6.264 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[7]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.293      ;
+; -6.264 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[8]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.293      ;
+; -6.264 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[9]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.293      ;
+; -6.264 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[10] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.293      ;
+; -6.264 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[11] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.293      ;
+; -6.264 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[12] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.293      ;
+; -6.264 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[13] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.293      ;
+; -6.264 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[0]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.293      ;
+; -6.256 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[1]  ; CLK          ; CLK         ; 1.000        ; -0.013     ; 7.283      ;
+; -6.247 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[1]  ; CLK          ; CLK         ; 1.000        ; -0.013     ; 7.274      ;
+; -6.178 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[2]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.207      ;
+; -6.178 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[3]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.207      ;
+; -6.178 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[4]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.207      ;
+; -6.178 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[5]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.207      ;
+; -6.178 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[6]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.207      ;
+; -6.178 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[7]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.207      ;
+; -6.178 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[8]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.207      ;
+; -6.178 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[9]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.207      ;
+; -6.178 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[10] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.207      ;
+; -6.178 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[11] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.207      ;
+; -6.178 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[12] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.207      ;
+; -6.178 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[13] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.207      ;
+; -6.178 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[0]  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.207      ;
+; -6.159 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[1]  ; CLK          ; CLK         ; 1.000        ; -0.013     ; 7.186      ;
+; -6.131 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[15] ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.160      ;
+; -6.126 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|done        ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.155      ;
+; -6.120 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|triggering  ; CLK          ; CLK         ; 1.000        ; -0.011     ; 7.149      ;
++--------+-----------------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLK'                                                                                                                                                                                              ;
++-------+-------------------------------------------------------------------+-------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                         ; To Node                                                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------------------------+-------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.499 ; serialGPIO:inst4|async_receiver:RX|BaudTickGen:tickgen|Acc[4]     ; serialGPIO:inst4|async_receiver:RX|BaudTickGen:tickgen|Acc[4]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|async_receiver:RX|Filter_cnt[0]                  ; serialGPIO:inst4|async_receiver:RX|Filter_cnt[0]                  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|async_receiver:RX|Filter_cnt[1]                  ; serialGPIO:inst4|async_receiver:RX|Filter_cnt[1]                  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|async_receiver:RX|RxD_bit                        ; serialGPIO:inst4|async_receiver:RX|RxD_bit                        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|async_receiver:RX|RxD_state[0]                   ; serialGPIO:inst4|async_receiver:RX|RxD_state[0]                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|async_receiver:RX|RxD_state[1]                   ; serialGPIO:inst4|async_receiver:RX|RxD_state[1]                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|async_receiver:RX|RxD_state[3]                   ; serialGPIO:inst4|async_receiver:RX|RxD_state[3]                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[0]             ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[0]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[1]             ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[1]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[2]             ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[2]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|async_receiver:RX|RxD_state[2]                   ; serialGPIO:inst4|async_receiver:RX|RxD_state[2]                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|write_flag                                       ; serialGPIO:inst4|write_flag                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|spi_counter[0]                                   ; serialGPIO:inst4|spi_counter[0]                                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|spi_counter[1]                                   ; serialGPIO:inst4|spi_counter[1]                                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|spi_counter[2]                                   ; serialGPIO:inst4|spi_counter[2]                                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; spi_module:inst17|r_SPI_Clk_Count[0]                              ; spi_module:inst17|r_SPI_Clk_Count[0]                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; spi_module:inst17|r_SPI_Clk_Count[1]                              ; spi_module:inst17|r_SPI_Clk_Count[1]                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; spi_module:inst17|cs_enable                                       ; spi_module:inst17|cs_enable                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|op_counter[1]                                    ; serialGPIO:inst4|op_counter[1]                                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|op_counter[0]                                    ; serialGPIO:inst4|op_counter[0]                                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|op_counter[2]                                    ; serialGPIO:inst4|op_counter[2]                                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|charge_rst                                       ; serialGPIO:inst4|charge_rst                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; PushButton_Debouncer:inst10|PB_state                              ; PushButton_Debouncer:inst10|PB_state                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; CapacitorCharger:inst27|done_latch                                ; CapacitorCharger:inst27|done_latch                                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; PushButton_Debouncer:inst11|PB_state                              ; PushButton_Debouncer:inst11|PB_state                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; CapacitorCharger:inst27|fault_latch                               ; CapacitorCharger:inst27|fault_latch                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|trigger_fire                                     ; serialGPIO:inst4|trigger_fire                                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|trigger_test                                     ; serialGPIO:inst4|trigger_test                                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|cap_charge                                       ; serialGPIO:inst4|cap_charge                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; PushButton_Debouncer:inst5|PB_state                               ; PushButton_Debouncer:inst5|PB_state                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; PushButton_Debouncer:inst6|PB_state                               ; PushButton_Debouncer:inst6|PB_state                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|async_transmitter:TX|TxD_state[0]                ; serialGPIO:inst4|async_transmitter:TX|TxD_state[0]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|async_transmitter:TX|TxD_state[3]                ; serialGPIO:inst4|async_transmitter:TX|TxD_state[3]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|async_transmitter:TX|TxD_state[1]                ; serialGPIO:inst4|async_transmitter:TX|TxD_state[1]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; spi_module:inst17|r_SPI_Clk                                       ; spi_module:inst17|r_SPI_Clk                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; PushButton_Debouncer:inst9|PB_state                               ; PushButton_Debouncer:inst9|PB_state                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; PushButton_Debouncer:inst8|PB_state                               ; PushButton_Debouncer:inst8|PB_state                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; igbt_trigger:inst26|trigger                                       ; igbt_trigger:inst26|trigger                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; CapacitorCharger:inst29|enable_latch                              ; CapacitorCharger:inst29|enable_latch                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; CapacitorCharger:inst29|fault_latch                               ; CapacitorCharger:inst29|fault_latch                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; CapacitorCharger:inst29|done_latch                                ; CapacitorCharger:inst29|done_latch                                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; FireController:inst30|trig_charge                                 ; FireController:inst30|trig_charge                                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|trig_charge                                      ; serialGPIO:inst4|trig_charge                                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; CapacitorCharger:inst27|enable_latch                              ; CapacitorCharger:inst27|enable_latch                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|async_transmitter:TX|TxD_shift[7]                ; serialGPIO:inst4|async_transmitter:TX|TxD_shift[7]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; spi_module:inst17|r_TX_Bit_Count[0]                               ; spi_module:inst17|r_TX_Bit_Count[0]                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; spi_module:inst17|r_TX_Bit_Count[1]                               ; spi_module:inst17|r_TX_Bit_Count[1]                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; serialGPIO:inst4|select                                           ; serialGPIO:inst4|select                                           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.744 ; serialGPIO:inst4|tx_msg[0]                                        ; serialGPIO:inst4|async_transmitter:TX|TxD_shift[0]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.050      ;
+; 0.746 ; FireController:inst30|trig_charge                                 ; CapacitorCharger:inst27|enable_latch                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.052      ;
+; 0.747 ; PushButton_Debouncer:inst5|PB_sync_0                              ; PushButton_Debouncer:inst5|PB_sync_1                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.053      ;
+; 0.748 ; serialGPIO:inst4|cap_charge                                       ; CapacitorCharger:inst29|enable_latch                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.054      ;
+; 0.753 ; PushButton_Debouncer:inst10|PB_cnt[15]                            ; PushButton_Debouncer:inst10|PB_cnt[15]                            ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.059      ;
+; 0.753 ; PushButton_Debouncer:inst11|PB_cnt[15]                            ; PushButton_Debouncer:inst11|PB_cnt[15]                            ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.059      ;
+; 0.753 ; PushButton_Debouncer:inst5|PB_cnt[15]                             ; PushButton_Debouncer:inst5|PB_cnt[15]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.059      ;
+; 0.753 ; PushButton_Debouncer:inst6|PB_cnt[15]                             ; PushButton_Debouncer:inst6|PB_cnt[15]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.059      ;
+; 0.753 ; PushButton_Debouncer:inst9|PB_cnt[15]                             ; PushButton_Debouncer:inst9|PB_cnt[15]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.059      ;
+; 0.753 ; PushButton_Debouncer:inst8|PB_cnt[15]                             ; PushButton_Debouncer:inst8|PB_cnt[15]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.059      ;
+; 0.753 ; serialGPIO:inst4|spi_counter[1]                                   ; serialGPIO:inst4|spi_counter[2]                                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.059      ;
+; 0.754 ; serialGPIO:inst4|spi_counter[2]                                   ; serialGPIO:inst4|spi_counter[0]                                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.060      ;
+; 0.755 ; serialGPIO:inst4|async_receiver:RX|RxD_data[6]                    ; serialGPIO:inst4|resistance[6]                                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.061      ;
+; 0.755 ; serialGPIO:inst4|spi_counter[2]                                   ; serialGPIO:inst4|spi_counter[1]                                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.061      ;
+; 0.758 ; serialGPIO:inst4|async_receiver:RX|RxD_data[7]                    ; serialGPIO:inst4|async_receiver:RX|RxD_data[6]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.064      ;
+; 0.759 ; serialGPIO:inst4|async_receiver:RX|RxD_data[7]                    ; serialGPIO:inst4|resistance[7]                                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.763 ; CapacitorCharger:inst27|done_latch                                ; FireController:inst30|trigger                                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.069      ;
+; 0.764 ; serialGPIO:inst4|trigger_fire                                     ; FireController:inst30|trig_fire_latch                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.070      ;
+; 0.769 ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[0]             ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[2]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.075      ;
+; 0.770 ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[0]             ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[1]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.076      ;
+; 0.777 ; serialGPIO:inst4|async_receiver:RX|Filter_cnt[1]                  ; serialGPIO:inst4|async_receiver:RX|RxD_bit                        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.083      ;
+; 0.779 ; spi_module:inst17|r_SPI_Clk                                       ; spi_module:inst17|o_SPI_Clk                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.085      ;
+; 0.782 ; spi_module:inst17|r_SPI_Clk_Count[1]                              ; spi_module:inst17|r_SPI_Clk                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.088      ;
+; 0.787 ; spi_module:inst17|r_SPI_Clk_Edges[4]                              ; spi_module:inst17|r_SPI_Clk_Edges[4]                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.093      ;
+; 0.787 ; serialGPIO:inst4|async_transmitter:TX|TxD_state[1]                ; serialGPIO:inst4|async_transmitter:TX|TxD_state[3]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.093      ;
+; 0.794 ; spi_module:inst17|r_SPI_Clk_Edges[4]                              ; spi_module:inst17|cs_enable                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.100      ;
+; 0.824 ; serialGPIO:inst4|reg_number[1]                                    ; serialGPIO:inst4|spi_write                                        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.130      ;
+; 0.890 ; PushButton_Debouncer:inst8|PB_sync_0                              ; PushButton_Debouncer:inst8|PB_sync_1                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.196      ;
+; 0.891 ; PushButton_Debouncer:inst9|PB_sync_0                              ; PushButton_Debouncer:inst9|PB_sync_1                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.197      ;
+; 0.892 ; PushButton_Debouncer:inst11|PB_sync_0                             ; PushButton_Debouncer:inst11|PB_sync_1                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.198      ;
+; 0.925 ; serialGPIO:inst4|async_transmitter:TX|TxD_shift[3]                ; serialGPIO:inst4|async_transmitter:TX|TxD_shift[2]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.231      ;
+; 0.937 ; CapacitorCharger:inst27|fault_latch                               ; FireController:inst30|trigger                                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.243      ;
+; 0.943 ; serialGPIO:inst4|async_receiver:RX|RxD_data[1]                    ; serialGPIO:inst4|async_receiver:RX|RxD_data[0]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.249      ;
+; 1.014 ; serialGPIO:inst4|async_receiver:RX|RxD_data[5]                    ; serialGPIO:inst4|resistance_trigger[5]                            ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.320      ;
+; 1.050 ; PushButton_Debouncer:inst11|PB_cnt[14]                            ; PushButton_Debouncer:inst11|PB_state                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.356      ;
+; 1.050 ; PushButton_Debouncer:inst9|PB_cnt[14]                             ; PushButton_Debouncer:inst9|PB_state                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.356      ;
+; 1.051 ; spi_module:inst17|r_SPI_Clk                                       ; spi_module:inst17|r_Trailing_Edge                                 ; CLK          ; CLK         ; 0.000        ; -0.001     ; 1.356      ;
+; 1.051 ; PushButton_Debouncer:inst8|PB_cnt[14]                             ; PushButton_Debouncer:inst8|PB_state                               ; CLK          ; CLK         ; 0.000        ; -0.001     ; 1.356      ;
+; 1.064 ; spi_module:inst17|r_TX_DV                                         ; spi_module:inst17|r_TX_Bit_Count[1]                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.370      ;
+; 1.066 ; spi_module:inst17|r_TX_DV                                         ; spi_module:inst17|r_TX_Bit_Count[0]                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.372      ;
+; 1.067 ; spi_module:inst17|r_TX_DV                                         ; spi_module:inst17|o_SPI_MOSI                                      ; CLK          ; CLK         ; 0.000        ; -0.001     ; 1.372      ;
+; 1.112 ; serialGPIO:inst4|async_receiver:RX|RxD_sync[0]                    ; serialGPIO:inst4|async_receiver:RX|RxD_sync[1]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.418      ;
+; 1.130 ; serialGPIO:inst4|async_transmitter:TX|BaudTickGen:tickgen|Acc[2]  ; serialGPIO:inst4|async_transmitter:TX|BaudTickGen:tickgen|Acc[2]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.436      ;
+; 1.133 ; serialGPIO:inst4|async_receiver:RX|BaudTickGen:tickgen|Acc[5]     ; serialGPIO:inst4|async_receiver:RX|BaudTickGen:tickgen|Acc[5]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.439      ;
+; 1.135 ; serialGPIO:inst4|async_receiver:RX|BaudTickGen:tickgen|Acc[11]    ; serialGPIO:inst4|async_receiver:RX|BaudTickGen:tickgen|Acc[11]    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.441      ;
+; 1.135 ; serialGPIO:inst4|async_transmitter:TX|BaudTickGen:tickgen|Acc[8]  ; serialGPIO:inst4|async_transmitter:TX|BaudTickGen:tickgen|Acc[8]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.441      ;
+; 1.142 ; spi_module:inst17|r_SPI_Clk_Edges[1]                              ; spi_module:inst17|r_SPI_Clk_Edges[1]                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.448      ;
+; 1.142 ; spi_module:inst17|r_SPI_Clk_Edges[3]                              ; spi_module:inst17|r_SPI_Clk_Edges[3]                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.448      ;
+; 1.156 ; spi_module:inst17|r_SPI_Clk_Edges[4]                              ; spi_module:inst17|o_TX_Ready                                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.462      ;
+; 1.158 ; serialGPIO:inst4|async_transmitter:TX|BaudTickGen:tickgen|Acc[9]  ; serialGPIO:inst4|async_transmitter:TX|BaudTickGen:tickgen|Acc[9]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.464      ;
+; 1.158 ; serialGPIO:inst4|async_transmitter:TX|BaudTickGen:tickgen|Acc[10] ; serialGPIO:inst4|async_transmitter:TX|BaudTickGen:tickgen|Acc[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.464      ;
+; 1.161 ; serialGPIO:inst4|tx_msg[5]                                        ; serialGPIO:inst4|async_transmitter:TX|TxD_shift[5]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.467      ;
++-------+-------------------------------------------------------------------+-------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLK'                                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                 ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------+
+; -1.941 ; 1.000        ; 2.941          ; Port Rate        ; CLK   ; Rise       ; CLK                                    ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; CapacitorCharger:inst27|done_latch     ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; CapacitorCharger:inst27|done_latch     ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; CapacitorCharger:inst27|enable_latch   ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; CapacitorCharger:inst27|enable_latch   ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; CapacitorCharger:inst27|fault_latch    ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; CapacitorCharger:inst27|fault_latch    ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; CapacitorCharger:inst29|done_latch     ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; CapacitorCharger:inst29|done_latch     ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; CapacitorCharger:inst29|enable_latch   ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; CapacitorCharger:inst29|enable_latch   ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; CapacitorCharger:inst29|fault_latch    ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; CapacitorCharger:inst29|fault_latch    ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; FireController:inst30|trig_charge      ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; FireController:inst30|trig_charge      ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; FireController:inst30|trig_fire_latch  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; FireController:inst30|trig_fire_latch  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; FireController:inst30|trigger          ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; FireController:inst30|trigger          ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[0]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[0]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[10] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[10] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[11] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[11] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[12] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[12] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[13] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[13] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[14] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[14] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[15] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[15] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[1]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[1]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[2]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[2]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[3]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[3]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[4]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[4]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[5]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[5]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[6]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[6]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[7]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[7]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[8]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[8]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[9]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[9]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_state   ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_state   ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_sync_0  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_sync_0  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_sync_1  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_sync_1  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[0]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[0]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[10] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[10] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[11] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[11] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[12] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[12] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[13] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[13] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[14] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[14] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[15] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[15] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[1]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[1]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[2]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[2]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[3]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[3]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[4]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[4]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[5]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[5]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[6]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[6]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[7]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[7]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[8]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[8]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[9]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[9]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_state   ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_state   ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_sync_0  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_sync_0  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_sync_1  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_sync_1  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst5|PB_cnt[0]   ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst5|PB_cnt[0]   ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst5|PB_cnt[10]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst5|PB_cnt[10]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst5|PB_cnt[11]  ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Setup Times                                                                  ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; B1             ; CLK        ; 3.730  ; 3.730  ; Rise       ; CLK             ;
+; B2             ; CLK        ; 3.875  ; 3.875  ; Rise       ; CLK             ;
+; cap_done_pin   ; CLK        ; 4.619  ; 4.619  ; Rise       ; CLK             ;
+; cap_fault_pin  ; CLK        ; 4.060  ; 4.060  ; Rise       ; CLK             ;
+; rx_pin         ; CLK        ; 4.853  ; 4.853  ; Rise       ; CLK             ;
+; trig_done_pin  ; CLK        ; 0.274  ; 0.274  ; Rise       ; CLK             ;
+; trig_fault_pin ; CLK        ; -0.447 ; -0.447 ; Rise       ; CLK             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; B1             ; CLK        ; -3.464 ; -3.464 ; Rise       ; CLK             ;
+; B2             ; CLK        ; -3.609 ; -3.609 ; Rise       ; CLK             ;
+; cap_done_pin   ; CLK        ; -4.353 ; -4.353 ; Rise       ; CLK             ;
+; cap_fault_pin  ; CLK        ; -3.794 ; -3.794 ; Rise       ; CLK             ;
+; rx_pin         ; CLK        ; -4.587 ; -4.587 ; Rise       ; CLK             ;
+; trig_done_pin  ; CLK        ; -0.008 ; -0.008 ; Rise       ; CLK             ;
+; trig_fault_pin ; CLK        ; 0.713  ; 0.713  ; Rise       ; CLK             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; LED1          ; CLK        ; 7.175 ; 7.175 ; Rise       ; CLK             ;
+; LED2          ; CLK        ; 7.162 ; 7.162 ; Rise       ; CLK             ;
+; cap_on_pin    ; CLK        ; 9.132 ; 9.132 ; Rise       ; CLK             ;
+; spark_trig    ; CLK        ; 8.851 ; 8.851 ; Rise       ; CLK             ;
+; spi_clk       ; CLK        ; 8.193 ; 8.193 ; Rise       ; CLK             ;
+; spi_cs_1      ; CLK        ; 9.096 ; 9.096 ; Rise       ; CLK             ;
+; spi_cs_2      ; CLK        ; 9.729 ; 9.729 ; Rise       ; CLK             ;
+; spi_sdi       ; CLK        ; 7.837 ; 7.837 ; Rise       ; CLK             ;
+; switching_pin ; CLK        ; 9.506 ; 9.506 ; Rise       ; CLK             ;
+; trig_on_pin   ; CLK        ; 9.550 ; 9.550 ; Rise       ; CLK             ;
+; tx_pin        ; CLK        ; 9.968 ; 9.968 ; Rise       ; CLK             ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; LED1          ; CLK        ; 7.175 ; 7.175 ; Rise       ; CLK             ;
+; LED2          ; CLK        ; 7.162 ; 7.162 ; Rise       ; CLK             ;
+; cap_on_pin    ; CLK        ; 8.974 ; 8.974 ; Rise       ; CLK             ;
+; spark_trig    ; CLK        ; 8.851 ; 8.851 ; Rise       ; CLK             ;
+; spi_clk       ; CLK        ; 8.193 ; 8.193 ; Rise       ; CLK             ;
+; spi_cs_1      ; CLK        ; 8.901 ; 8.901 ; Rise       ; CLK             ;
+; spi_cs_2      ; CLK        ; 9.538 ; 9.538 ; Rise       ; CLK             ;
+; spi_sdi       ; CLK        ; 7.837 ; 7.837 ; Rise       ; CLK             ;
+; switching_pin ; CLK        ; 9.506 ; 9.506 ; Rise       ; CLK             ;
+; trig_on_pin   ; CLK        ; 9.248 ; 9.248 ; Rise       ; CLK             ;
+; tx_pin        ; CLK        ; 9.464 ; 9.464 ; Rise       ; CLK             ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; CLK   ; -1.589 ; -73.579       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; CLK   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; CLK   ; -1.380 ; -292.380              ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLK'                                                                                                                                  ;
++--------+-----------------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.589 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[2]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.609      ;
+; -1.589 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[3]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.609      ;
+; -1.589 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[4]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.609      ;
+; -1.589 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[5]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.609      ;
+; -1.589 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[6]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.609      ;
+; -1.589 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[7]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.609      ;
+; -1.589 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[8]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.609      ;
+; -1.589 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[9]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.609      ;
+; -1.589 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[10] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.609      ;
+; -1.589 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[11] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.609      ;
+; -1.589 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[12] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.609      ;
+; -1.589 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[13] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.609      ;
+; -1.589 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[0]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.609      ;
+; -1.498 ; serialGPIO:inst4|trigger_duration_us[1] ; igbt_trigger:inst26|counter[1]  ; CLK          ; CLK         ; 1.000        ; -0.014     ; 2.516      ;
+; -1.492 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[2]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.512      ;
+; -1.492 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[3]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.512      ;
+; -1.492 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[4]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.512      ;
+; -1.492 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[5]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.512      ;
+; -1.492 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[6]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.512      ;
+; -1.492 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[7]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.512      ;
+; -1.492 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[8]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.512      ;
+; -1.492 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[9]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.512      ;
+; -1.492 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[10] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.512      ;
+; -1.492 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[11] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.512      ;
+; -1.492 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[12] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.512      ;
+; -1.492 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[13] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.512      ;
+; -1.492 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[0]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.512      ;
+; -1.481 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[2]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.501      ;
+; -1.481 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[3]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.501      ;
+; -1.481 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[4]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.501      ;
+; -1.481 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[5]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.501      ;
+; -1.481 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[6]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.501      ;
+; -1.481 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[7]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.501      ;
+; -1.481 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[8]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.501      ;
+; -1.481 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[9]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.501      ;
+; -1.481 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[10] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.501      ;
+; -1.481 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[11] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.501      ;
+; -1.481 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[12] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.501      ;
+; -1.481 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[13] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.501      ;
+; -1.481 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[0]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.501      ;
+; -1.407 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[2]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.427      ;
+; -1.407 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[3]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.427      ;
+; -1.407 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[4]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.427      ;
+; -1.407 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[5]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.427      ;
+; -1.407 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[6]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.427      ;
+; -1.407 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[7]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.427      ;
+; -1.407 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[8]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.427      ;
+; -1.407 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[9]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.427      ;
+; -1.407 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[10] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.427      ;
+; -1.407 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[11] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.427      ;
+; -1.407 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[12] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.427      ;
+; -1.407 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[13] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.427      ;
+; -1.407 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[0]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.427      ;
+; -1.401 ; serialGPIO:inst4|trigger_duration_us[0] ; igbt_trigger:inst26|counter[1]  ; CLK          ; CLK         ; 1.000        ; -0.014     ; 2.419      ;
+; -1.390 ; serialGPIO:inst4|trigger_duration_us[4] ; igbt_trigger:inst26|counter[1]  ; CLK          ; CLK         ; 1.000        ; -0.014     ; 2.408      ;
+; -1.386 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[2]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.406      ;
+; -1.386 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[3]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.406      ;
+; -1.386 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[4]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.406      ;
+; -1.386 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[5]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.406      ;
+; -1.386 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[6]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.406      ;
+; -1.386 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[7]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.406      ;
+; -1.386 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[8]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.406      ;
+; -1.386 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[9]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.406      ;
+; -1.386 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[10] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.406      ;
+; -1.386 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[11] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.406      ;
+; -1.386 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[12] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.406      ;
+; -1.386 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[13] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.406      ;
+; -1.386 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[0]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.406      ;
+; -1.375 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[2]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.395      ;
+; -1.375 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[3]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.395      ;
+; -1.375 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[4]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.395      ;
+; -1.375 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[5]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.395      ;
+; -1.375 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[6]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.395      ;
+; -1.375 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[7]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.395      ;
+; -1.375 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[8]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.395      ;
+; -1.375 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[9]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.395      ;
+; -1.375 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[10] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.395      ;
+; -1.375 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[11] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.395      ;
+; -1.375 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[12] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.395      ;
+; -1.375 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[13] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.395      ;
+; -1.375 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[0]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.395      ;
+; -1.331 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[2]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.351      ;
+; -1.331 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[3]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.351      ;
+; -1.331 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[4]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.351      ;
+; -1.331 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[5]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.351      ;
+; -1.331 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[6]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.351      ;
+; -1.331 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[7]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.351      ;
+; -1.331 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[8]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.351      ;
+; -1.331 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[9]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.351      ;
+; -1.331 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[10] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.351      ;
+; -1.331 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[11] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.351      ;
+; -1.331 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[12] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.351      ;
+; -1.331 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[13] ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.351      ;
+; -1.331 ; serialGPIO:inst4|trigger_duration_us[5] ; igbt_trigger:inst26|counter[0]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.351      ;
+; -1.316 ; serialGPIO:inst4|trigger_duration_us[7] ; igbt_trigger:inst26|counter[1]  ; CLK          ; CLK         ; 1.000        ; -0.014     ; 2.334      ;
+; -1.295 ; serialGPIO:inst4|trigger_duration_us[3] ; igbt_trigger:inst26|counter[1]  ; CLK          ; CLK         ; 1.000        ; -0.014     ; 2.313      ;
+; -1.284 ; serialGPIO:inst4|trigger_duration_us[2] ; igbt_trigger:inst26|counter[1]  ; CLK          ; CLK         ; 1.000        ; -0.014     ; 2.302      ;
+; -1.274 ; serialGPIO:inst4|trigger_duration_us[6] ; igbt_trigger:inst26|counter[2]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.294      ;
+; -1.274 ; serialGPIO:inst4|trigger_duration_us[6] ; igbt_trigger:inst26|counter[3]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.294      ;
+; -1.274 ; serialGPIO:inst4|trigger_duration_us[6] ; igbt_trigger:inst26|counter[4]  ; CLK          ; CLK         ; 1.000        ; -0.012     ; 2.294      ;
++--------+-----------------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLK'                                                                                                                                                                                              ;
++-------+-------------------------------------------------------------------+-------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                         ; To Node                                                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------------------------+-------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; serialGPIO:inst4|async_receiver:RX|BaudTickGen:tickgen|Acc[4]     ; serialGPIO:inst4|async_receiver:RX|BaudTickGen:tickgen|Acc[4]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|async_receiver:RX|Filter_cnt[0]                  ; serialGPIO:inst4|async_receiver:RX|Filter_cnt[0]                  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|async_receiver:RX|Filter_cnt[1]                  ; serialGPIO:inst4|async_receiver:RX|Filter_cnt[1]                  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|async_receiver:RX|RxD_bit                        ; serialGPIO:inst4|async_receiver:RX|RxD_bit                        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|async_receiver:RX|RxD_state[0]                   ; serialGPIO:inst4|async_receiver:RX|RxD_state[0]                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|async_receiver:RX|RxD_state[1]                   ; serialGPIO:inst4|async_receiver:RX|RxD_state[1]                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|async_receiver:RX|RxD_state[3]                   ; serialGPIO:inst4|async_receiver:RX|RxD_state[3]                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[0]             ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[0]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[1]             ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[1]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[2]             ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[2]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|async_receiver:RX|RxD_state[2]                   ; serialGPIO:inst4|async_receiver:RX|RxD_state[2]                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|write_flag                                       ; serialGPIO:inst4|write_flag                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|spi_counter[0]                                   ; serialGPIO:inst4|spi_counter[0]                                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|spi_counter[1]                                   ; serialGPIO:inst4|spi_counter[1]                                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|spi_counter[2]                                   ; serialGPIO:inst4|spi_counter[2]                                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; spi_module:inst17|r_SPI_Clk_Count[0]                              ; spi_module:inst17|r_SPI_Clk_Count[0]                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; spi_module:inst17|r_SPI_Clk_Count[1]                              ; spi_module:inst17|r_SPI_Clk_Count[1]                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; spi_module:inst17|cs_enable                                       ; spi_module:inst17|cs_enable                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|op_counter[1]                                    ; serialGPIO:inst4|op_counter[1]                                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|op_counter[0]                                    ; serialGPIO:inst4|op_counter[0]                                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|op_counter[2]                                    ; serialGPIO:inst4|op_counter[2]                                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|charge_rst                                       ; serialGPIO:inst4|charge_rst                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PushButton_Debouncer:inst10|PB_state                              ; PushButton_Debouncer:inst10|PB_state                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; CapacitorCharger:inst27|done_latch                                ; CapacitorCharger:inst27|done_latch                                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PushButton_Debouncer:inst11|PB_state                              ; PushButton_Debouncer:inst11|PB_state                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; CapacitorCharger:inst27|fault_latch                               ; CapacitorCharger:inst27|fault_latch                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|trigger_fire                                     ; serialGPIO:inst4|trigger_fire                                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|trigger_test                                     ; serialGPIO:inst4|trigger_test                                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|cap_charge                                       ; serialGPIO:inst4|cap_charge                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PushButton_Debouncer:inst5|PB_state                               ; PushButton_Debouncer:inst5|PB_state                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PushButton_Debouncer:inst6|PB_state                               ; PushButton_Debouncer:inst6|PB_state                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|async_transmitter:TX|TxD_state[0]                ; serialGPIO:inst4|async_transmitter:TX|TxD_state[0]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|async_transmitter:TX|TxD_state[3]                ; serialGPIO:inst4|async_transmitter:TX|TxD_state[3]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|async_transmitter:TX|TxD_state[1]                ; serialGPIO:inst4|async_transmitter:TX|TxD_state[1]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; spi_module:inst17|r_SPI_Clk                                       ; spi_module:inst17|r_SPI_Clk                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PushButton_Debouncer:inst9|PB_state                               ; PushButton_Debouncer:inst9|PB_state                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PushButton_Debouncer:inst8|PB_state                               ; PushButton_Debouncer:inst8|PB_state                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; igbt_trigger:inst26|trigger                                       ; igbt_trigger:inst26|trigger                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; CapacitorCharger:inst29|enable_latch                              ; CapacitorCharger:inst29|enable_latch                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; CapacitorCharger:inst29|fault_latch                               ; CapacitorCharger:inst29|fault_latch                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; CapacitorCharger:inst29|done_latch                                ; CapacitorCharger:inst29|done_latch                                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; FireController:inst30|trig_charge                                 ; FireController:inst30|trig_charge                                 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|trig_charge                                      ; serialGPIO:inst4|trig_charge                                      ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; CapacitorCharger:inst27|enable_latch                              ; CapacitorCharger:inst27|enable_latch                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|async_transmitter:TX|TxD_shift[7]                ; serialGPIO:inst4|async_transmitter:TX|TxD_shift[7]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; spi_module:inst17|r_TX_Bit_Count[0]                               ; spi_module:inst17|r_TX_Bit_Count[0]                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; spi_module:inst17|r_TX_Bit_Count[1]                               ; spi_module:inst17|r_TX_Bit_Count[1]                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; serialGPIO:inst4|select                                           ; serialGPIO:inst4|select                                           ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.241 ; serialGPIO:inst4|tx_msg[0]                                        ; serialGPIO:inst4|async_transmitter:TX|TxD_shift[0]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.242 ; PushButton_Debouncer:inst5|PB_sync_0                              ; PushButton_Debouncer:inst5|PB_sync_1                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.242 ; FireController:inst30|trig_charge                                 ; CapacitorCharger:inst27|enable_latch                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.243 ; PushButton_Debouncer:inst10|PB_cnt[15]                            ; PushButton_Debouncer:inst10|PB_cnt[15]                            ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; PushButton_Debouncer:inst11|PB_cnt[15]                            ; PushButton_Debouncer:inst11|PB_cnt[15]                            ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; PushButton_Debouncer:inst5|PB_cnt[15]                             ; PushButton_Debouncer:inst5|PB_cnt[15]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; PushButton_Debouncer:inst6|PB_cnt[15]                             ; PushButton_Debouncer:inst6|PB_cnt[15]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; PushButton_Debouncer:inst9|PB_cnt[15]                             ; PushButton_Debouncer:inst9|PB_cnt[15]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; PushButton_Debouncer:inst8|PB_cnt[15]                             ; PushButton_Debouncer:inst8|PB_cnt[15]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; serialGPIO:inst4|cap_charge                                       ; CapacitorCharger:inst29|enable_latch                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.244 ; serialGPIO:inst4|async_receiver:RX|RxD_data[6]                    ; serialGPIO:inst4|resistance[6]                                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.396      ;
+; 0.245 ; serialGPIO:inst4|async_receiver:RX|RxD_data[7]                    ; serialGPIO:inst4|async_receiver:RX|RxD_data[6]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.397      ;
+; 0.245 ; serialGPIO:inst4|spi_counter[2]                                   ; serialGPIO:inst4|spi_counter[0]                                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.397      ;
+; 0.246 ; serialGPIO:inst4|async_receiver:RX|RxD_data[7]                    ; serialGPIO:inst4|resistance[7]                                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.398      ;
+; 0.246 ; serialGPIO:inst4|spi_counter[2]                                   ; serialGPIO:inst4|spi_counter[1]                                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.398      ;
+; 0.246 ; serialGPIO:inst4|spi_counter[1]                                   ; serialGPIO:inst4|spi_counter[2]                                   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.398      ;
+; 0.251 ; CapacitorCharger:inst27|done_latch                                ; FireController:inst30|trigger                                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.403      ;
+; 0.252 ; serialGPIO:inst4|trigger_fire                                     ; FireController:inst30|trig_fire_latch                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.404      ;
+; 0.253 ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[0]             ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[1]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.405      ;
+; 0.253 ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[0]             ; serialGPIO:inst4|async_receiver:RX|OversamplingCnt[2]             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.405      ;
+; 0.256 ; spi_module:inst17|r_SPI_Clk                                       ; spi_module:inst17|o_SPI_Clk                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.408      ;
+; 0.257 ; serialGPIO:inst4|async_receiver:RX|Filter_cnt[1]                  ; serialGPIO:inst4|async_receiver:RX|RxD_bit                        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.409      ;
+; 0.258 ; spi_module:inst17|r_SPI_Clk_Count[1]                              ; spi_module:inst17|r_SPI_Clk                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.410      ;
+; 0.262 ; spi_module:inst17|r_SPI_Clk_Edges[4]                              ; spi_module:inst17|r_SPI_Clk_Edges[4]                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.414      ;
+; 0.263 ; serialGPIO:inst4|async_transmitter:TX|TxD_state[1]                ; serialGPIO:inst4|async_transmitter:TX|TxD_state[3]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.415      ;
+; 0.269 ; spi_module:inst17|r_SPI_Clk_Edges[4]                              ; spi_module:inst17|cs_enable                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.421      ;
+; 0.279 ; serialGPIO:inst4|reg_number[1]                                    ; serialGPIO:inst4|spi_write                                        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.431      ;
+; 0.296 ; serialGPIO:inst4|async_transmitter:TX|TxD_shift[3]                ; serialGPIO:inst4|async_transmitter:TX|TxD_shift[2]                ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.448      ;
+; 0.302 ; CapacitorCharger:inst27|fault_latch                               ; FireController:inst30|trigger                                     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.454      ;
+; 0.322 ; PushButton_Debouncer:inst8|PB_sync_0                              ; PushButton_Debouncer:inst8|PB_sync_1                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.474      ;
+; 0.323 ; PushButton_Debouncer:inst11|PB_sync_0                             ; PushButton_Debouncer:inst11|PB_sync_1                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.475      ;
+; 0.323 ; PushButton_Debouncer:inst9|PB_sync_0                              ; PushButton_Debouncer:inst9|PB_sync_1                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.475      ;
+; 0.324 ; PushButton_Debouncer:inst11|PB_cnt[14]                            ; PushButton_Debouncer:inst11|PB_state                              ; CLK          ; CLK         ; 0.000        ; -0.001     ; 0.475      ;
+; 0.324 ; PushButton_Debouncer:inst9|PB_cnt[14]                             ; PushButton_Debouncer:inst9|PB_state                               ; CLK          ; CLK         ; 0.000        ; -0.001     ; 0.475      ;
+; 0.325 ; spi_module:inst17|r_SPI_Clk                                       ; spi_module:inst17|r_Trailing_Edge                                 ; CLK          ; CLK         ; 0.000        ; -0.001     ; 0.476      ;
+; 0.325 ; PushButton_Debouncer:inst8|PB_cnt[14]                             ; PushButton_Debouncer:inst8|PB_state                               ; CLK          ; CLK         ; 0.000        ; -0.001     ; 0.476      ;
+; 0.329 ; spi_module:inst17|r_TX_DV                                         ; spi_module:inst17|r_TX_Bit_Count[1]                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.481      ;
+; 0.331 ; spi_module:inst17|r_TX_DV                                         ; spi_module:inst17|r_TX_Bit_Count[0]                               ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.483      ;
+; 0.332 ; spi_module:inst17|r_TX_DV                                         ; spi_module:inst17|o_SPI_MOSI                                      ; CLK          ; CLK         ; 0.000        ; -0.001     ; 0.483      ;
+; 0.342 ; serialGPIO:inst4|async_receiver:RX|RxD_data[5]                    ; serialGPIO:inst4|resistance_trigger[5]                            ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.494      ;
+; 0.347 ; serialGPIO:inst4|async_receiver:RX|RxD_data[1]                    ; serialGPIO:inst4|async_receiver:RX|RxD_data[0]                    ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.499      ;
+; 0.353 ; serialGPIO:inst4|async_transmitter:TX|BaudTickGen:tickgen|Acc[9]  ; serialGPIO:inst4|async_transmitter:TX|BaudTickGen:tickgen|Acc[9]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.505      ;
+; 0.353 ; serialGPIO:inst4|async_transmitter:TX|BaudTickGen:tickgen|Acc[10] ; serialGPIO:inst4|async_transmitter:TX|BaudTickGen:tickgen|Acc[10] ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.505      ;
+; 0.355 ; PushButton_Debouncer:inst10|PB_cnt[0]                             ; PushButton_Debouncer:inst10|PB_cnt[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; PushButton_Debouncer:inst11|PB_cnt[0]                             ; PushButton_Debouncer:inst11|PB_cnt[0]                             ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; PushButton_Debouncer:inst5|PB_cnt[0]                              ; PushButton_Debouncer:inst5|PB_cnt[0]                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; PushButton_Debouncer:inst6|PB_cnt[0]                              ; PushButton_Debouncer:inst6|PB_cnt[0]                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; PushButton_Debouncer:inst9|PB_cnt[0]                              ; PushButton_Debouncer:inst9|PB_cnt[0]                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; PushButton_Debouncer:inst8|PB_cnt[0]                              ; PushButton_Debouncer:inst8|PB_cnt[0]                              ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.356 ; serialGPIO:inst4|async_transmitter:TX|BaudTickGen:tickgen|Acc[2]  ; serialGPIO:inst4|async_transmitter:TX|BaudTickGen:tickgen|Acc[2]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.508      ;
+; 0.356 ; serialGPIO:inst4|async_transmitter:TX|BaudTickGen:tickgen|Acc[4]  ; serialGPIO:inst4|async_transmitter:TX|BaudTickGen:tickgen|Acc[4]  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.508      ;
+; 0.357 ; serialGPIO:inst4|async_receiver:RX|BaudTickGen:tickgen|Acc[5]     ; serialGPIO:inst4|async_receiver:RX|BaudTickGen:tickgen|Acc[5]     ; CLK          ; CLK         ; 0.000        ; 0.000      ; 0.509      ;
++-------+-------------------------------------------------------------------+-------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLK'                                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                 ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLK   ; Rise       ; CLK                                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; CapacitorCharger:inst27|done_latch     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; CapacitorCharger:inst27|done_latch     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; CapacitorCharger:inst27|enable_latch   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; CapacitorCharger:inst27|enable_latch   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; CapacitorCharger:inst27|fault_latch    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; CapacitorCharger:inst27|fault_latch    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; CapacitorCharger:inst29|done_latch     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; CapacitorCharger:inst29|done_latch     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; CapacitorCharger:inst29|enable_latch   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; CapacitorCharger:inst29|enable_latch   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; CapacitorCharger:inst29|fault_latch    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; CapacitorCharger:inst29|fault_latch    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; FireController:inst30|trig_charge      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; FireController:inst30|trig_charge      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; FireController:inst30|trig_fire_latch  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; FireController:inst30|trig_fire_latch  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; FireController:inst30|trigger          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; FireController:inst30|trigger          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_cnt[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_state   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_state   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_sync_0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_sync_0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_sync_1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst10|PB_sync_1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_cnt[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_state   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_state   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_sync_0  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_sync_0  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_sync_1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst11|PB_sync_1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst5|PB_cnt[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst5|PB_cnt[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst5|PB_cnt[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; PushButton_Debouncer:inst5|PB_cnt[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; PushButton_Debouncer:inst5|PB_cnt[11]  ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Setup Times                                                                  ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; B1             ; CLK        ; 1.822  ; 1.822  ; Rise       ; CLK             ;
+; B2             ; CLK        ; 1.898  ; 1.898  ; Rise       ; CLK             ;
+; cap_done_pin   ; CLK        ; 2.131  ; 2.131  ; Rise       ; CLK             ;
+; cap_fault_pin  ; CLK        ; 1.932  ; 1.932  ; Rise       ; CLK             ;
+; rx_pin         ; CLK        ; 2.207  ; 2.207  ; Rise       ; CLK             ;
+; trig_done_pin  ; CLK        ; -0.286 ; -0.286 ; Rise       ; CLK             ;
+; trig_fault_pin ; CLK        ; -0.500 ; -0.500 ; Rise       ; CLK             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; B1             ; CLK        ; -1.702 ; -1.702 ; Rise       ; CLK             ;
+; B2             ; CLK        ; -1.778 ; -1.778 ; Rise       ; CLK             ;
+; cap_done_pin   ; CLK        ; -2.011 ; -2.011 ; Rise       ; CLK             ;
+; cap_fault_pin  ; CLK        ; -1.812 ; -1.812 ; Rise       ; CLK             ;
+; rx_pin         ; CLK        ; -2.087 ; -2.087 ; Rise       ; CLK             ;
+; trig_done_pin  ; CLK        ; 0.406  ; 0.406  ; Rise       ; CLK             ;
+; trig_fault_pin ; CLK        ; 0.620  ; 0.620  ; Rise       ; CLK             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; LED1          ; CLK        ; 3.474 ; 3.474 ; Rise       ; CLK             ;
+; LED2          ; CLK        ; 3.471 ; 3.471 ; Rise       ; CLK             ;
+; cap_on_pin    ; CLK        ; 4.061 ; 4.061 ; Rise       ; CLK             ;
+; spark_trig    ; CLK        ; 4.094 ; 4.094 ; Rise       ; CLK             ;
+; spi_clk       ; CLK        ; 3.672 ; 3.672 ; Rise       ; CLK             ;
+; spi_cs_1      ; CLK        ; 3.950 ; 3.950 ; Rise       ; CLK             ;
+; spi_cs_2      ; CLK        ; 4.268 ; 4.268 ; Rise       ; CLK             ;
+; spi_sdi       ; CLK        ; 3.566 ; 3.566 ; Rise       ; CLK             ;
+; switching_pin ; CLK        ; 4.404 ; 4.404 ; Rise       ; CLK             ;
+; trig_on_pin   ; CLK        ; 4.233 ; 4.233 ; Rise       ; CLK             ;
+; tx_pin        ; CLK        ; 4.361 ; 4.361 ; Rise       ; CLK             ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; LED1          ; CLK        ; 3.474 ; 3.474 ; Rise       ; CLK             ;
+; LED2          ; CLK        ; 3.471 ; 3.471 ; Rise       ; CLK             ;
+; cap_on_pin    ; CLK        ; 4.017 ; 4.017 ; Rise       ; CLK             ;
+; spark_trig    ; CLK        ; 4.094 ; 4.094 ; Rise       ; CLK             ;
+; spi_clk       ; CLK        ; 3.672 ; 3.672 ; Rise       ; CLK             ;
+; spi_cs_1      ; CLK        ; 3.890 ; 3.890 ; Rise       ; CLK             ;
+; spi_cs_2      ; CLK        ; 4.182 ; 4.182 ; Rise       ; CLK             ;
+; spi_sdi       ; CLK        ; 3.566 ; 3.566 ; Rise       ; CLK             ;
+; switching_pin ; CLK        ; 4.404 ; 4.404 ; Rise       ; CLK             ;
+; trig_on_pin   ; CLK        ; 4.113 ; 4.113 ; Rise       ; CLK             ;
+; tx_pin        ; CLK        ; 4.195 ; 4.195 ; Rise       ; CLK             ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -6.949   ; 0.215 ; N/A      ; N/A     ; -1.941              ;
+;  CLK             ; -6.949   ; 0.215 ; N/A      ; N/A     ; -1.941              ;
+; Design-wide TNS  ; -694.934 ; 0.0   ; 0.0      ; 0.0     ; -433.785            ;
+;  CLK             ; -694.934 ; 0.000 ; N/A      ; N/A     ; -433.785            ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------+
+; Setup Times                                                                  ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; B1             ; CLK        ; 3.730  ; 3.730  ; Rise       ; CLK             ;
+; B2             ; CLK        ; 3.875  ; 3.875  ; Rise       ; CLK             ;
+; cap_done_pin   ; CLK        ; 4.619  ; 4.619  ; Rise       ; CLK             ;
+; cap_fault_pin  ; CLK        ; 4.060  ; 4.060  ; Rise       ; CLK             ;
+; rx_pin         ; CLK        ; 4.853  ; 4.853  ; Rise       ; CLK             ;
+; trig_done_pin  ; CLK        ; 0.274  ; 0.274  ; Rise       ; CLK             ;
+; trig_fault_pin ; CLK        ; -0.447 ; -0.447 ; Rise       ; CLK             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; B1             ; CLK        ; -1.702 ; -1.702 ; Rise       ; CLK             ;
+; B2             ; CLK        ; -1.778 ; -1.778 ; Rise       ; CLK             ;
+; cap_done_pin   ; CLK        ; -2.011 ; -2.011 ; Rise       ; CLK             ;
+; cap_fault_pin  ; CLK        ; -1.812 ; -1.812 ; Rise       ; CLK             ;
+; rx_pin         ; CLK        ; -2.087 ; -2.087 ; Rise       ; CLK             ;
+; trig_done_pin  ; CLK        ; 0.406  ; 0.406  ; Rise       ; CLK             ;
+; trig_fault_pin ; CLK        ; 0.713  ; 0.713  ; Rise       ; CLK             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; LED1          ; CLK        ; 7.175 ; 7.175 ; Rise       ; CLK             ;
+; LED2          ; CLK        ; 7.162 ; 7.162 ; Rise       ; CLK             ;
+; cap_on_pin    ; CLK        ; 9.132 ; 9.132 ; Rise       ; CLK             ;
+; spark_trig    ; CLK        ; 8.851 ; 8.851 ; Rise       ; CLK             ;
+; spi_clk       ; CLK        ; 8.193 ; 8.193 ; Rise       ; CLK             ;
+; spi_cs_1      ; CLK        ; 9.096 ; 9.096 ; Rise       ; CLK             ;
+; spi_cs_2      ; CLK        ; 9.729 ; 9.729 ; Rise       ; CLK             ;
+; spi_sdi       ; CLK        ; 7.837 ; 7.837 ; Rise       ; CLK             ;
+; switching_pin ; CLK        ; 9.506 ; 9.506 ; Rise       ; CLK             ;
+; trig_on_pin   ; CLK        ; 9.550 ; 9.550 ; Rise       ; CLK             ;
+; tx_pin        ; CLK        ; 9.968 ; 9.968 ; Rise       ; CLK             ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; LED1          ; CLK        ; 3.474 ; 3.474 ; Rise       ; CLK             ;
+; LED2          ; CLK        ; 3.471 ; 3.471 ; Rise       ; CLK             ;
+; cap_on_pin    ; CLK        ; 4.017 ; 4.017 ; Rise       ; CLK             ;
+; spark_trig    ; CLK        ; 4.094 ; 4.094 ; Rise       ; CLK             ;
+; spi_clk       ; CLK        ; 3.672 ; 3.672 ; Rise       ; CLK             ;
+; spi_cs_1      ; CLK        ; 3.890 ; 3.890 ; Rise       ; CLK             ;
+; spi_cs_2      ; CLK        ; 4.182 ; 4.182 ; Rise       ; CLK             ;
+; spi_sdi       ; CLK        ; 3.566 ; 3.566 ; Rise       ; CLK             ;
+; switching_pin ; CLK        ; 4.404 ; 4.404 ; Rise       ; CLK             ;
+; trig_on_pin   ; CLK        ; 4.113 ; 4.113 ; Rise       ; CLK             ;
+; tx_pin        ; CLK        ; 4.195 ; 4.195 ; Rise       ; CLK             ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLK        ; CLK      ; 10849    ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLK        ; CLK      ; 10849    ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 7     ; 7    ;
+; Unconstrained Input Port Paths  ; 7     ; 7    ;
+; Unconstrained Output Ports      ; 11    ; 11   ;
+; Unconstrained Output Port Paths ; 19    ; 19   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Oct 10 14:49:48 2025
+Info: Command: quartus_sta PPT_FPGA_CYC_4 -c PPT_FPGA_CYC_4
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'PPT_FPGA_CYC_4.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLK CLK
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.949
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -6.949      -694.934 CLK 
+Info (332146): Worst-case hold slack is 0.499
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.499         0.000 CLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.941
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.941      -433.785 CLK 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.589
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.589       -73.579 CLK 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 CLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -292.380 CLK 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4541 megabytes
+    Info: Processing ended: Fri Oct 10 14:49:49 2025
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

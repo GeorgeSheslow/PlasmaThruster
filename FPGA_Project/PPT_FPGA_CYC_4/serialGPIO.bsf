@@ -1,0 +1,120 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 232 256)
+	(text "serialGPIO" (rect 5 0 47 12)(font "Arial" ))
+	(text "inst" (rect 8 224 20 236)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 10 12)(font "Arial" ))
+		(text "clk" (rect 21 27 31 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "RxD" (rect 0 0 20 12)(font "Arial" ))
+		(text "RxD" (rect 21 43 41 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 216 32)
+		(output)
+		(text "TxD" (rect 0 0 17 12)(font "Arial" ))
+		(text "TxD" (rect 178 27 195 39)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32)(line_width 1))
+	)
+	(port
+		(pt 216 48)
+		(output)
+		(text "fire" (rect 0 0 12 12)(font "Arial" ))
+		(text "fire" (rect 183 43 195 55)(font "Arial" ))
+		(line (pt 216 48)(pt 200 48)(line_width 1))
+	)
+	(port
+		(pt 216 64)
+		(output)
+		(text "trigger_fire" (rect 0 0 43 12)(font "Arial" ))
+		(text "trigger_fire" (rect 152 59 195 71)(font "Arial" ))
+		(line (pt 216 64)(pt 200 64)(line_width 1))
+	)
+	(port
+		(pt 216 80)
+		(output)
+		(text "trigger_test" (rect 0 0 44 12)(font "Arial" ))
+		(text "trigger_test" (rect 151 75 195 87)(font "Arial" ))
+		(line (pt 216 80)(pt 200 80)(line_width 1))
+	)
+	(port
+		(pt 216 96)
+		(output)
+		(text "trig_charge" (rect 0 0 44 12)(font "Arial" ))
+		(text "trig_charge" (rect 151 91 195 103)(font "Arial" ))
+		(line (pt 216 96)(pt 200 96)(line_width 1))
+	)
+	(port
+		(pt 216 112)
+		(output)
+		(text "cap_charge" (rect 0 0 47 12)(font "Arial" ))
+		(text "cap_charge" (rect 148 107 195 119)(font "Arial" ))
+		(line (pt 216 112)(pt 200 112)(line_width 1))
+	)
+	(port
+		(pt 216 128)
+		(output)
+		(text "charge_rst" (rect 0 0 43 12)(font "Arial" ))
+		(text "charge_rst" (rect 152 123 195 135)(font "Arial" ))
+		(line (pt 216 128)(pt 200 128)(line_width 1))
+	)
+	(port
+		(pt 216 144)
+		(output)
+		(text "trigger_duration_us[7..0]" (rect 0 0 96 12)(font "Arial" ))
+		(text "trigger_duration_us[7..0]" (rect 99 139 195 151)(font "Arial" ))
+		(line (pt 216 144)(pt 200 144)(line_width 3))
+	)
+	(port
+		(pt 216 160)
+		(output)
+		(text "resistance[7..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "resistance[7..0]" (rect 135 155 195 167)(font "Arial" ))
+		(line (pt 216 160)(pt 200 160)(line_width 3))
+	)
+	(port
+		(pt 216 176)
+		(output)
+		(text "spi_write" (rect 0 0 34 12)(font "Arial" ))
+		(text "spi_write" (rect 161 171 195 183)(font "Arial" ))
+		(line (pt 216 176)(pt 200 176)(line_width 1))
+	)
+	(port
+		(pt 216 192)
+		(output)
+		(text "select" (rect 0 0 22 12)(font "Arial" ))
+		(text "select" (rect 173 187 195 199)(font "Arial" ))
+		(line (pt 216 192)(pt 200 192)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 200 224)(line_width 1))
+	)
+)

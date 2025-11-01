@@ -1,0 +1,10 @@
+module serialGPIO(
+    input read,
+    input write,
+    output reg [7:0] GPout,  // general purpose outputs
+    input [7:0] GPin  // general purpose inputs
+);
+
+reg [7:0] reg_1;
+
+endmodule
