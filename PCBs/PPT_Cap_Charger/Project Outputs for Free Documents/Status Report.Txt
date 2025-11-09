@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 9:16:25 AM On 24/08/2025
+
+Output: Bill of Materials
+Type  : BOM
+From  : Variant [[No Variations]] of Project [PPT_Cap_Charger.PrjPcb]
+   Generated File[Bill of Materials-PPT_Cap_Charger.xlsx]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 9:16:26 AM On 24/08/2025

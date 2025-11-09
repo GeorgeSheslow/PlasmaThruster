@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [Charger.PcbDoc]
+   Generated File[Charger.TXT]
+   Generated File[Charger.LDP]
+   Generated File[Charger.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 8:34:20 PM On 26/08/2025
